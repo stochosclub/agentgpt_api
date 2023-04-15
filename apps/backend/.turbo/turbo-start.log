@@ -1,0 +1,33 @@
+npm WARN cli npm v9.6.4 does not support Node.js v15.14.0. This version of npm supports the following node versions: `^14.17.0 || ^16.13.0 || >=18.0.0`. You can find the latest version at https://nodejs.org/.
+
+> backend@0.1.0 start
+> node server.js
+
+node:events:346
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::2200
+    at Server.setupListenHandle [as _listen2] (node:net:1311:16)
+    at listenInCluster (node:net:1359:12)
+    at Server.listen (node:net:1446:7)
+    at Function.listen (/Users/alessandrocasarola/Documents/GitHub/agentgpt_api_flutter/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/alessandrocasarola/Documents/GitHub/agentgpt_api_flutter/apps/backend/server.js:313:20)
+    at Module._compile (node:internal/modules/cjs/loader:1092:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1121:10)
+    at Module.load (node:internal/modules/cjs/loader:972:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:813:14)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1338:8)
+    at processTicksAndRejections (node:internal/process/task_queues:81:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 2200
+}
+npm ERR! Lifecycle script `start` failed with error: 
+npm ERR! Error: command failed 
+npm ERR!   in workspace: backend@0.1.0 
+npm ERR!   at location: /Users/alessandrocasarola/Documents/GitHub/agentgpt_api_flutter/apps/backend 
