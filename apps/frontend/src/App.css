@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,400;0,700;1,400&family=Overpass+Mono:wght@400;700&display=swap');
+
+:root {
+  --app-background-color: #83ebc8;
+  --app-fade-color: #97ebcf;
+  --segment-background-color: #ffffff;
+  --insignificant-color: #ffff;
+
+  --text-color: #000000;
+  --output-segment-bg-color: #080c14c0;
+  --output-segment-border-color: #999e;
+}
+
+.dark-mode {
+  --app-background-color: #164636;
+  --app-fade-color: #0a2b20;
+  --segment-background-color: #080c14c0;
+  --insignificant-color: #455;
+
+  --text-color: #ffffff;
+  --output-segment-bg-color: #080c14c0;
+  --output-segment-border-color: #fffe;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.AppBackground {
+  background-color: var(--app-background-color);
+  box-shadow: inset 0 0 256px 0 #0008, inset 0 0 32px 0 #0088;
+  transition: background-color 0.17s ease-out !important;
+}
+
+.OutputSegmentBox {
+  background-color: var(--segment-background-color);
+  transition: background-color 0.17s ease-out !important;
+
+  border: 2px solid #fffe;
+  border: 1px solid #999e;
+  border-radius: 1rem;
+  padding: 20px 28px;
+  margin: 12px 0;
+
+  text-align: start;
+
+  overflow: hidden;
+}
+
+.OutputSegmentBox pre {
+  /* font-family: 'Azeret Mono', monospace !important; */
+  font-family: 'Overpass Mono', monospace !important;
+
+  /* color: white; */
+  font-size: 14px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  margin-bottom: 12px;
+
+  filter: brightness(1.2);
+  font-weight: bold;
+}
+
+.OutputCommandHeadingBox {
+  background: #ffd000;
+  border: 1px solid #999e;
+  overflow: hidden;
+}
+
+.OutputCommandHeadingBox > * {
+  animation-name: slide-right;
+  animation-duration: 0.47s;
+}
+
+.ScrollToBottomButton {
+  background-color: var(--insignificant-color) !important;
+}
+
+/* Add this to your CSS file */
+.TheFooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  padding-left: 4px;
+  padding-right: 4px;
+  pointer-events: none;
+  background-color: var(--app-fade-color);
+}
+
+.TheFooter:before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: 100% 100px;
+  background: linear-gradient(to bottom, #fff0 0%, var(--app-fade-color) 100%);
+}
+
+.FancyBox {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 6px 16px 0 #0005;
+  animation-name: pop-in;
+  animation-duration: 0.47s;
+  animation-timing-function: ease-out;
+}
+
+.glass {
+  backdrop-filter: blur(8px);
+}
+
+.withShadow {
+  box-shadow: 0 6px 16px 0 #0045;
+}
+
+.withSmallShadow {
+  box-shadow: 0 3px 8px 0 #0002;
+}
+
+.fancyFont {
+  font-family: 'pragmatapro-fraktur', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+button {
+  pointer-events: all;
+}
+
+.CommandStip {
+  background-image: linear-gradient(180deg, #455555, #546464);
+  color: #fffd;
+  font-weight: bold;
+  text-shadow: 0 0 3px #000, 0 0 8px #0009;
+  border: 1px solid #0004;
+  transition: background-color 0.2s ease-in-out,
+    background-image 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.CommandStip.continuous {
+  background: linear-gradient(180deg, #a51225, #861221);
+}
+
+.CommandStip.active {
+  background-color: #5ba828;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 20px,
+    #367a08 20px,
+    #367a08 40px
+  );
+  background-size: 200% 200%;
+  animation: barberpole 3s linear infinite;
+}
+
+.CommandStip.active.continuous {
+  background-color: #a90f2e;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 20px,
+    Crimson 20px,
+    Crimson 40px
+  );
+}
+
+@keyframes barberpole {
+  100% {
+    background-position: -56.568px 0;
+  }
+}
+
+/******************************************************
+  *  CSS3 Pretty Scrollbar
+  ******************************************************/
+
+.pretty-scrollbar::-webkit-scrollbar-track {
+  background-color: #0001;
+}
+
+.pretty-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  background-color: #0000;
+}
+
+.pretty-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #3336;
+}
